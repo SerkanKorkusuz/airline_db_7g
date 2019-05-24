@@ -40,9 +40,9 @@
           <form string="Airline">
                 <sheet>
                     <div class="oe_title">
-                     	<h4>
+                     	<h3>
                             <field name="name"/>
-                        </h4>
+                      </h3>
                     </div>
                     <group>
                        <group>
