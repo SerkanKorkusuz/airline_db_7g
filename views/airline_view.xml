@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+      <!-- Airline Menu Action -->
+      <record id="airline_menu_action" model="ir.actions.act_window">
+        	<field name="name">Airline</field>
+        	<field name="res_model">aline_db.airline</field>
+        	<field name="view_type">form</field>
+        	<field name="view_mode">tree,form,pivot</field>
+        	<field name="domain">[]</field>
+        	<field name="help" type="html">
+            	<p class="oe_view_nocontent_create">Enter The First Airline</p>
+        	</field>
+      </record>
+      <!-- Airline Database Menu -->
+      <menuitem id="airline_db_menu" name="Airline Database"/>
+      <menuitem id="airline_menu" parent="airline_db_menu" name="Airline" action="airline_menu_action"/>
+      <menuitem id="airline_alliance_menu" parent="airline_db_menu" name="Airline Alliance" action="airline_alliance__menu_action"/>
+      <!-- Airline Menu Tree/List View-->
+      <record id="airline_tree_view" model="ir.ui.view">
+        <field name="name">Airline Tree</field>
+        <field name="model">aline_db.airline</field>
+         <field name="arch" type="xml">
+            <tree string="Airlines">
+                <field name="name"/>
+                <field name="airline_id"/>
+                <field name="country_id"/>
+                <field name="iata_member"/>
+                <field name="alliance"/>
+                <field name="service_type"/>
+                <field name="flag_carrier"/>
+            </tree>
+        </field>
+      </record>
+      <!-- Airline Menu Form View -->
+      <record id="airline_free_view" model="ir.ui.view">
+        <field name="name">Airline Form</field>
+        <field name="model">aline_db.airline</field>
+        <field name="arch" type="xml">
+          <form string="Airline">
+                <sheet>
+                    <div class="oe_title">
+                     	<h4>
+                            <field name="name"/>
+                        </h4>
+                    </div>
+                    <group>
+                       <group>
+                           <field name="airline_id"/>
+                           <field name="country_id" readonly="1"/>
+                           <field name="iata_member"/>
+                        </group>
+                        <group>
+                           <field name="alliance"/>
+                           <field name="service_type"/>
+                           <field name="flag_carrier"/>
+                        </group>
+                    </group>
+                </sheet>
+          </form>
+        </field>
+      </record>
+      <!-- Airline Menu Pivot View-->
+      <record id="airline_pivot_view" model="ir.ui.view">
+        <field name="name">Airline Pivot</field>
+        <field name="model">aline_db.airline</field>
+        <field name="arch" type="xml">
+            <pivot string="Airline Pivot">
+                <field name="aircraft_no" type="row"/>
+                <field name="revenue_ancillary" type="col"/>
+                <field name="revenue_total" type="col"/>
+            </pivot>
+        </field>
+      </record>
+  </data>
+</odoo>

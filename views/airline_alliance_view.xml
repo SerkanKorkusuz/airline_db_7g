@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+      <!-- Airline Alliance Menu Action -->
+      <record id="airline_alliance_menu_action" model="ir.actions.act_window">
+        	<field name="name">Airline Alliance</field>
+        	<field name="res_model">aline_db.alliance</field>
+        	<field name="view_type">form</field>
+        	<field name="view_mode">tree,form</field>
+        	<field name="domain">[]</field>
+        	<field name="help" type="html">
+            	<p class="oe_view_nocontent_create">Enter a New Airline Alliance</p>
+        	</field>
+      </record>
+      <!-- Airline Database Menu -->
+      <menuitem id="airline_db_menu" name="Airline Database"/>
+      <menuitem id="airline_menu" parent="airline_db_menu" name="Airline" action="airline_menu_action"/>
+      <menuitem id="airline_alliance_menu" parent="airline_db_menu" name="Airline Alliance" action="airline_alliance__menu_action"/>
+
+      <!-- Airline Alliance Menu List/Tree View -->
+      <record id="airline_alliance_tree_view" model="ir.ui.view">
+        <field name="name">Airline Alliance Tree</field>
+        <field name="model">aline_db.alliance</field>
+         <field name="arch" type="xml">
+            <tree string="Airline Alliance">
+                <field name="name"/>
+                <field name="website"/>
+            </tree>
+        </field>
+      </record>
+      <!-- Airline Alliance Menu Form View -->
+      <record id="airline_alliance_free_view" model="ir.ui.view">
+        <field name="name">Airline Alliance Form</field>
+        <field name="model">aline_db.alliance</field>
+        <field name="arch" type="xml">
+          <form string="Airline Alliance">
+                <sheet>
+                    <div class="oe_title">
+                     	<h4>
+                            <field name="name"/>
+                        </h4>
+                    </div>
+                           <field name="website"/>
+                </sheet>
+          </form>
+        </field>
+      </record>
+
+      <!-- Airline Alliance menu's initial data -->
+      <record model="aline_db.alliance" id="alliance0">
+        <field name="name">One World</field>
+        <field name="website">https://www.oneworld.com/</field>
+      </record>
+      <record model="aline_db.alliance" id="alliance1">
+        <field name="name">U-Fly Alliance</field>
+        <field name="website">https://uflyalliance.com</field>
+      </record>
+      <record model="aline_db.alliance" id="alliance2">
+        <field name="name">Sky Team</field>
+        <field name="website">https://www.skyteam.com</field>
+      </record>
+      <record model="aline_db.alliance" id="alliance3">
+        <field name="name">Star Alliance</field>
+        <field name="website">https://www.staralliance.com</field>
+      </record>
+      <record model="aline_db.alliance" id="alliance4">
+        <field name="name">Value Alliance</field>
+        <field name="website">https://www.valuealliance.com</field>
+      </record>
+      <record model="aline_db.alliance" id="alliance5">
+        <field name="name">Vanilla Alliance</field>
+        <field name="website">https://www.vanilla-air.com/en/value-alliance</field>
+      </record>
+
+  </data>
+</odoo>
