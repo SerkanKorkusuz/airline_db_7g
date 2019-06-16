@@ -15,7 +15,6 @@
       <!-- Airline Database Menu -->
       <menuitem id="airline_db_menu" name="Airline Database"/>
       <menuitem id="airline_menu" parent="airline_db_menu" name="Airline" action="airline_menu_action"/>
-      <menuitem id="airline_alliance_menu" parent="airline_db_menu" name="Airline Alliance" action="airline_alliance__menu_action"/>
       <!-- Airline Menu Tree/List View-->
       <record id="airline_tree_view" model="ir.ui.view">
         <field name="name">Airline Tree</field>
